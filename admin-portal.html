@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    
+    <link rel="stylesheet" href="/client/css/admin-portal.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-user-shield"></i> Admin</h2>
+            </div>
+            <div class="menu-item active" onclick="showSection('dashboard')">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </div>
+            <div class="menu-item" onclick="showSection('users')">
+                <i class="fas fa-users"></i> Users
+            </div>
+            <div class="menu-item" onclick="showSection('courses')">
+                <i class="fas fa-book"></i> Courses
+            </div>
+            <div class="menu-item" onclick="showSection('reports')">
+                <i class="fas fa-chart-line"></i> Reports
+            </div>
+            <div class="menu-item" onclick="showSection('settings')">
+                <i class="fas fa-cog"></i> Settings
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Dashboard</h1>
+                <div>
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" width="40" style="border-radius:50%">
+                    <span>Admin</span>
+                </div>
+            </div>
+            
+            <!-- Dashboard -->
+            <div id="dashboard" class="active-section">
+                <div class="cards">
+                    <div class="card">
+                        <h3>1,245</h3>
+                        <p>Total Users</p>
+                    </div>
+                    <div class="card">
+                        <h3>78</h3>
+                        <p>Active Courses</p>
+                    </div>
+                    <div class="card">
+                        <h3>356</h3>
+                        <p>Reports</p>
+                    </div>
+                    <div class="card">
+                        <h3>12</h3>
+                        <p>Support Tickets</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Recent Activity</h3>
+                    <table>
+                        <tr>
+                            <th>User</th>
+                            <th>Action</th>
+                            <th>Time</th>
+                        </tr>
+                        <tr>
+                            <td>John Smith</td>
+                            <td>Completed Course</td>
+                            <td>10 mins ago</td>
+                        </tr>
+                        <tr>
+                            <td>Sarah Johnson</td>
+                            <td>Submitted Assignment</td>
+                            <td>25 mins ago</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Users -->
+            <div id="users">
+                <div style="display:flex;justify-content:space-between;margin-bottom:15px">
+                    <h2>User Management</h2>
+                    <button class="btn btn-primary" onclick="openModal('add-user')">
+                        <i class="fas fa-plus"></i> Add User
+                    </button>
+                </div>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr>
+                        <td>John Smith</td>
+                        <td>john@example.com</td>
+                        <td>Student</td>
+                        <td>
+                            <button><i class="fas fa-edit"></i></button>
+                            <button><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sarah Johnson</td>
+                        <td>sarah@example.com</td>
+                        <td>Faculty</td>
+                        <td>
+                            <button><i class="fas fa-edit"></i></button>
+                            <button><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- Courses -->
+            <div id="courses">
+                <div style="display:flex;justify-content:space-between;margin-bottom:15px">
+                    <h2>Course Management</h2>
+                    <button class="btn btn-primary" onclick="openModal('add-course')">
+                        <i class="fas fa-plus"></i> Add Course
+                    </button>
+                </div>
+                <table>
+                    <tr>
+                        <th>Course</th>
+                        <th>Instructor</th>
+                        <th>Students</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr>
+                        <td>Web Development</td>
+                        <td>Sarah Johnson</td>
+                        <td>145</td>
+                        <td>
+                            <button><i class="fas fa-edit"></i></button>
+                            <button><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- Reports -->
+            <div id="reports">
+                <h2>Reports</h2>
+                <div class="card">
+                    <h3>Performance Overview</h3>
+                    <div style="height:200px;background:#f9f9f9"></div>
+                </div>
+            </div>
+            
+            <!-- Settings -->
+            <div id="settings">
+                <h2>Settings</h2>
+                <div class="card">
+                    <form>
+                        <label>Platform Name</label>
+                        <input type="text" class="form-control" value="Admin Portal">
+                        <button class="btn btn-primary">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add User Modal -->
+    <div id="add-user" class="modal">
+        <div class="modal-content">
+            <div style="display:flex;justify-content:space-between">
+                <h3>Add User</h3>
+                <button onclick="closeModal('add-user')">&times;</button>
+            </div>
+            <form style="margin:15px 0">
+                <input type="text" class="form-control" placeholder="Name">
+                <input type="email" class="form-control" placeholder="Email">
+                <select class="form-control">
+                    <option>Student</option>
+                    <option>Faculty</option>
+                    <option>Admin</option>
+                </select>
+                <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:10px">
+                    <button type="button" onclick="closeModal('add-user')">Cancel</button>
+                    <button type="button" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Add Course Modal -->
+    <div id="add-course" class="modal">
+        <div class="modal-content">
+            <div style="display:flex;justify-content:space-between">
+                <h3>Add Course</h3>
+                <button onclick="closeModal('add-course')">&times;</button>
+            </div>
+            <form style="margin:15px 0">
+                <input type="text" class="form-control" placeholder="Course Name">
+                <select class="form-control">
+                    <option>Select Instructor</option>
+                </select>
+                <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:10px">
+                    <button type="button" onclick="closeModal('add-course')">Cancel</button>
+                    <button type="button" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="/client/js/admin-portal.js"></script>
+    
+</body>
+</html>

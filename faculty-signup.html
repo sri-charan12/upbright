@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .signup-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        .radio-group {
+            margin-top: 5px;
+        }
+        
+        .radio-option {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .radio-option input {
+            margin-right: 10px;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .used-id {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        optgroup {
+            font-weight: bold;
+            font-style: normal;
+            color: #333;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 35px;
+            cursor: pointer;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .password-container {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h1>FACULTY SIGN UP</h1>
+        
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input type="text" id="id" name="id" placeholder="your id must contain 4 digits" required>
+                <div id="idError" class="error">ID must be exactly 4 digits</div>
+                <div id="idUsed" class="used-id">This ID is already registered</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="name">NAME</label>
+                <input type="text" id="name" name="name" placeholder="enter your full name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">E-MAIL</label>
+                <input type="email" id="email" name="email" placeholder="enter your email" required>
+            </div>
+            
+            <div class="form-group password-container">
+                <label for="password">PASSWORD</label>
+                <input type="password" id="password" name="password" placeholder="8 characters or numbers" required>
+                <span id="togglePassword" class="toggle-password">Show</span>
+                <div id="passwordError" class="error">Password must be at least 8 characters</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="degree">DEGREE PROGRAM</label>
+                <select id="degree" name="degree" required>
+                    <option value="" disabled selected>Select degree program</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="medicine">Medicine</option>
+                    <option value="arts">Arts</option>
+                    <option value="science">Science</option>
+                    <option value="commerce">Commerce</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="department">DEPARTMENT</label>
+                <select id="department" name="department" required>
+                    <option value="" disabled selected>Select department</option>
+                    <optgroup label="Engineering">
+                        <option value="computer_engineering">Computer Engineering</option>
+                        <option value="mechanical_engineering">Mechanical Engineering</option>
+                        <option value="electrical_engineering">Electrical Engineering</option>
+                        <option value="civil_engineering">Civil Engineering</option>
+                    </optgroup>
+                    <optgroup label="Medicine">
+                        <option value="general_medicine">General Medicine</option>
+                        <option value="dentistry">Dentistry</option>
+                        <option value="pharmacy">Pharmacy</option>
+                        <option value="nursing">Nursing</option>
+                    </optgroup>
+                    <optgroup label="Arts">
+                        <option value="english">English</option>
+                        <option value="history">History</option>
+                        <option value="psychology">Psychology</option>
+                        <option value="sociology">Sociology</option>
+                    </optgroup>
+                    <optgroup label="Science">
+                        <option value="physics">Physics</option>
+                        <option value="chemistry">Chemistry</option>
+                        <option value="mathematics">Mathematics</option>
+                        <option value="biology">Biology</option>
+                    </optgroup>
+                    <optgroup label="Commerce">
+                        <option value="accounting">Accounting</option>
+                        <option value="business_administration">Business Administration</option>
+                        <option value="economics">Economics</option>
+                        <option value="finance">Finance</option>
+                    </optgroup>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>GENDER</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">MALE</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">FEMALE</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="preferNotToSay" name="gender" value="prefer_not_to_say">
+                        <label for="preferNotToSay">PREFER NOT TO SAY</label>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit">sign up</button>
+        </form>
+    </div>
+
+    <script>
+        // Simulated database of used IDs (in a real app, this would be server-side)
+        const usedIds = ['1234', '4321', '1111'];
+        
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const idInput = document.getElementById('id');
+            const idError = document.getElementById('idError');
+            const idUsed = document.getElementById('idUsed');
+            const passwordInput = document.getElementById('password');
+            const passwordError = document.getElementById('passwordError');
+            const idRegex = /^\d{4}$/;
+            const passwordRegex = /^.{8,}$/;
+            
+            // Validate ID format
+            if (!idRegex.test(idInput.value)) {
+                idError.style.display = 'block';
+                idUsed.style.display = 'none';
+                idInput.focus();
+                return;
+            } else {
+                idError.style.display = 'none';
+            }
+            
+            // Check if ID is already used
+            if (usedIds.includes(idInput.value)) {
+                idUsed.style.display = 'block';
+                idInput.focus();
+                return;
+            } else {
+                idUsed.style.display = 'none';
+            }
+            
+            // Validate password
+            if (!passwordRegex.test(passwordInput.value)) {
+                passwordError.style.display = 'block';
+                passwordInput.focus();
+                return;
+            } else {
+                passwordError.style.display = 'none';
+            }
+            
+            // If validation passes, proceed with form submission
+            alert('Faculty registration successful!');
+            // In a real application, you would send the data to a server here
+            // this.submit();
+            
+            // Add ID to used IDs (simulated)
+            usedIds.push(idInput.value);
+            console.log('Registered Faculty IDs:', usedIds);
+        });
+
+        // Real-time ID validation
+        document.getElementById('id').addEventListener('input', function(e) {
+            const idError = document.getElementById('idError');
+            const idUsed = document.getElementById('idUsed');
+            const idRegex = /^\d{0,4}$/;
+            
+            // Only allow numeric input
+            if (!idRegex.test(e.target.value)) {
+                e.target.value = e.target.value.slice(0, -1);
+            }
+            
+            // Show error if not exactly 4 digits (but only after user stops typing)
+            clearTimeout(this.timer);
+            this.timer = setTimeout(() => {
+                const finalRegex = /^\d{4}$/;
+                if (!finalRegex.test(e.target.value) && e.target.value.length > 0) {
+                    idError.style.display = 'block';
+                    idUsed.style.display = 'none';
+                } else {
+                    idError.style.display = 'none';
+                    // Check if ID is already used
+                    if (usedIds.includes(e.target.value)) {
+                        idUsed.style.display = 'block';
+                    } else {
+                        idUsed.style.display = 'none';
+                    }
+                }
+            }, 500);
+        });
+
+        // Password toggle functionality
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                this.textContent = 'Hide';
+            } else {
+                passwordInput.type = 'password';
+                this.textContent = 'Show';
+            }
+        });
+
+        // Password validation on input
+        document.getElementById('password').addEventListener('input', function(e) {
+            const passwordError = document.getElementById('passwordError');
+            if (e.target.value.length > 0 && e.target.value.length < 8) {
+                passwordError.style.display = 'block';
+            } else {
+                passwordError.style.display = 'none';
+            }
+        });
+
+        // Optional: If you want to dynamically filter departments based on degree selection
+        document.getElementById('degree').addEventListener('change', function() {
+            const degree = this.value;
+            const departmentSelect = document.getElementById('department');
+            
+            // Reset and show all departments
+            for (let i = 0; i < departmentSelect.options.length; i++) {
+                departmentSelect.options[i].style.display = '';
+            }
+            
+            if (degree) {
+                // Hide all departments first
+                for (let i = 0; i < departmentSelect.options.length; i++) {
+                    departmentSelect.options[i].style.display = 'none';
+                }
+                
+                // Show only departments from selected degree
+                const optgroups = departmentSelect.getElementsByTagName('optgroup');
+                for (let i = 0; i < optgroups.length; i++) {
+                    if (optgroups[i].label.toLowerCase() === degree) {
+                        const options = optgroups[i].getElementsByTagName('option');
+                        for (let j = 0; j < options.length; j++) {
+                            options[j].style.display = '';
+                        }
+                    }
+                }
+                
+                // Show optgroup labels
+                for (let i = 0; i < optgroups.length; i++) {
+                    optgroups[i].style.display = '';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

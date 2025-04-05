@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="/client/css/student-portal.css">
+</head>
+<body>
+    <div class="portal-container">
+        <div class="portal-header">
+            <h1>Student Dashboard</h1>
+            <div class="notification-bell">🔔 <span class="notification-count">3</span></div>
+        </div>
+
+        <nav class="nav-tabs">
+            <button class="tab active-tab" data-tab="dashboard">Dashboard</button>
+            <button class="tab" data-tab="courses">My Courses</button>
+            <button class="tab" data-tab="assignments">Assignments</button>
+            <button class="tab" data-tab="exams">Exams</button>
+            <button class="tab" data-tab="grades">Grades</button>
+        </nav>
+
+        <!-- Dashboard Section -->
+        <div id="dashboard" class="tab-content active-tab">
+            <div class="dashboard-grid">
+                <div class="upcoming-deadlines">
+                    <h3>Upcoming Deadlines</h3>
+                    <ul class="deadline-list"></ul>
+                </div>
+                <div class="recent-grades">
+                    <h3>Recent Grades</h3>
+                    <div class="grades-list"></div>
+                </div>
+                <div class="quick-links">
+                    <h3>Quick Access</h3>
+                    <button class="btn-primary enroll-course">Enroll in New Course</button>
+                    <button class="btn-secondary view-materials">View Course Materials</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Courses Section -->
+        <div id="courses" class="tab-content hidden">
+            <h2>Enrolled Courses</h2>
+            <div class="course-grid"></div>
+        </div>
+
+        <!-- Assignments Section -->
+        <div id="assignments" class="tab-content hidden">
+            <h2>Assignments</h2>
+            <div class="assignment-list"></div>
+        </div>
+
+        <!-- Exams Section -->
+        <div id="exams" class="tab-content hidden">
+            <h2>Exams & Quizzes</h2>
+            <div class="quiz-grid">
+                <div class="upcoming-quizzes">
+                    <h3>Upcoming Tests</h3>
+                    <div class="quiz-list"></div>
+                </div>
+                <div class="previous-results">
+                    <h3>Previous Results</h3>
+                    <div class="result-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grades Section -->
+        <div id="grades" class="tab-content hidden">
+            <h2>Academic Progress</h2>
+            <div class="performance-chart">
+                <canvas id="progressChart"></canvas>
+            </div>
+            <div class="detailed-grades"></div>
+        </div>
+    </div>
+
+    <script src="/client/js/student-portal.js"></script>
+</body>
+</html>
