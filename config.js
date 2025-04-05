@@ -1,0 +1,2 @@
+export const SUPABASE_URL = 'https'; // replace with your values
+export const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtycndzZHZ6a25lZWllZWpnZnN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM3OTk3MTksImV4cCI6MjA1OTM3NTcxOX0.3szMTsjT1F_nNyBw8d6bMbJEXS91991LBCzJwlVSDfM';
