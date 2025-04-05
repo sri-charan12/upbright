@@ -1,0 +1,312 @@
+/* === Base Styles === */
+:root {
+    --primary-color: #2563eb;    /* Updated blue */
+    --secondary-color: #4f46e5;  /* Indigo */
+    --accent-color: #22c55e;     /* Green */
+    --text-color: #1e293b;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --status-submitted: #dcfce7;
+    --status-pending: #fef9c3;
+    --status-late: #fee2e2;
+    --chart-color-1: #3b82f6;
+    --chart-color-2: #10b981;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 1.5rem;
+}
+
+/* === Utility Classes === */
+.hidden { display: none; }
+.flex { display: flex; }
+.grid { display: grid; }
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+.btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+.btn-secondary {
+    background: var(--secondary-color);
+    color: white;
+}
+.btn-secondary:hover {
+    background: #4338ca;
+    transform: translateY(-1px);
+}
+
+/* === Portal Container === */
+.portal-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    min-height: 90vh;
+}
+
+/* === Header Styles === */
+.portal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.portal-header h1 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.notification-bell {
+    position: relative;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+}
+
+.notification-bell:hover {
+    background: #f1f5f9;
+}
+
+.notification-count {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    background: #ef4444;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    animation: pulse 2s infinite;
+}
+
+/* === Navigation Tabs === */
+.nav-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 1rem;
+}
+
+.tab {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: #64748b;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab:hover {
+    color: var(--primary-color);
+    background: #eff6ff;
+}
+
+.tab.active-tab {
+    color: var(--primary-color);
+    background: #eff6ff;
+    position: relative;
+}
+
+.tab.active-tab::after {
+    content: "";
+    position: absolute;
+    bottom: -1.1rem;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+/* === Dashboard Grid === */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.upcoming-deadlines, 
+.recent-grades, 
+.quick-links {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.upcoming-deadlines:hover,
+.recent-grades:hover {
+    transform: translateY(-2px);
+}
+
+/* === Course Cards === */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.course-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.course-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-radius: 4px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* === Assignment Styles === */
+.assignment-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.assignment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem;
+    background: var(--card-bg);
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.assignment-item:hover {
+    transform: translateX(5px);
+}
+
+.submission-status {
+    padding: 0.375rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.submitted { background: var(--status-submitted); color: #166534; }
+.pending { background: var(--status-pending); color: #854d0e; }
+.late { background: var(--status-late); color: #991b1b; }
+
+/* === Chart Container === */
+.performance-chart {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 2rem 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* === Animations === */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* === Dark Mode Support === */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #f8fafc;
+        --bg-color: #0f172a;
+        --card-bg: #1e293b;
+        --status-submitted: #14532d;
+        --status-pending: #713f12;
+        --status-late: #7f1d1d;
+    }
+    
+    body {
+        background: var(--bg-color);
+    }
+    
+    .portal-container {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/* === Mobile Responsiveness === */
+@media (max-width: 768px) {
+    .portal-container {
+        padding: 1rem;
+        border-radius: 0;
+    }
+
+    .nav-tabs {
+        flex-wrap: wrap;
+    }
+
+    .tab {
+        flex: 1 0 45%;
+        text-align: center;
+    }
+
+    .quiz-grid {
+        grid-template-columns: 1fr;
+    }
+}

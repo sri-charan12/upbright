@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121a2a; /* Dark blue background */
+    padding: 20px;
+    color: #e0e0e0; /* Light text color */
+}
+
+.portal-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #1a2438; /* Dark blue container */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    padding: 25px;
+}
+
+.portal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #2a3a5a; /* Darker blue border */
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.tab {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    background: #2a3a5a; /* Dark blue tab */
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab:hover {
+    background: #3a4a6a; /* Lighter blue on hover */
+}
+
+.active-tab {
+    background: #007bff; /* Bright blue for active tab */
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border-radius: 8px;
+    background: #2a3a5a; /* Dark blue content area */
+    margin-top: 15px;
+    color: #e0e0e0;
+}
+
+.tab-content.active-tab {
+    display: block;
+}
+
+.btn-primary {
+    background: #007bff; /* Bright blue primary button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: #0069d9; /* Slightly darker blue on hover */
+}
+
+.btn-secondary {
+    background: #5a6a8a; /* Darker blue secondary button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #4a5a7a; /* Darker on hover */
+}
+
+#assignment-form {
+    display: grid;
+    gap: 15px;
+    max-width: 600px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #3a4a6a; /* Dark blue border */
+    border-radius: 5px;
+    background-color: #2a3a5a; /* Dark blue input background */
+    color: #e0e0e0;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #007bff; /* Bright blue focus */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.performance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.notification-list {
+    margin: 20px 0;
+    display: grid;
+    gap: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Additional dark theme improvements */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a2438;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3a4a6a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4a5a7a;
+}
