@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPBRIGHT - Login</title>
+    <link rel="stylesheet" href="/client/css/sign-in.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>UPBRIGHT</h1>
+            <p>Dream. Learn. Achieve</p>
+        </div>
+
+        <div class="user-type">
+            <div class="user-type-btn active" data-type="faculty">FACULTY</div>
+            <div class="user-type-btn" data-type="student">STUDENT</div>
+            <div class="user-type-btn" data-type="admin">ADMIN</div>
+        </div>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">USERNAME</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">PASSWORD</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-btn">LOGIN</button>
+</body>    
+<script src="/client/js/sign-in.js"></script>
+
+</html>
+     

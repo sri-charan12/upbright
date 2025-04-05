@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPBRIGHT - E-Learning Platform</title>
+    <link rel="stylesheet" href="/client/home/home.css">
+    
+</head>
+<body>
+    <!-- Header with Register button -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.jpg" alt="UPBRIGHT Logo" class="logo">
+            <div>
+                <div class="brand-name">UPBRIGHT</div>
+                <div class="slogan">Dream. Learn. Achieve</div>
+            </div>
+        </div>.
+        
+        <div class="header-actions">
+            <div class="login-options">
+                <a href="/client/home/users/student-signup.html">Studet sign-up</a>
+                <a href="/client/home/users/faculty-signup.html">Faculty sign-up</a>
+                <a href="/client/home/users/admin-signup.html">Admin sign-up</a>
+            </div>
+            <a href="sign-in.html">
+            <button class="register-btn">Login </button>
+        </a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Our E-Learning Platform</h1>
+            <p>Access courses, submit assignments, track your progress, and communicate with faculty - all in one place.</p>
+        </div>
+    </section>
+    
+    <section class="courses-container">
+        <h2>Featured Technical Courses</h2>
+        <div class="course-grid">
+            <!-- Course 1 -->
+            <div class="course-card" onclick="toggleCourseDetails('web-dev')">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Web Development">
+                </div>
+                <div class="course-info">
+                    <h3>Web Development</h3>
+                    <p>Master full-stack web development</p>
+                </div>
+                <div class="course-details" id="web-dev-details">
+                    <p>Learn HTML, CSS, JavaScript, React, Node.js and more in this comprehensive web development course.</p>
+                    <p><strong>Duration:</strong> 12 weeks</p>
+                    <p><strong>Instructor:</strong> Dr. Sarah Johnson</p>
+                    <a href="sign-in.html">
+                    <button class="course-register-btn">Login</button>
+                </a>
+                </div>
+            </div>
+            
+            <!-- Course 2 -->
+            <div class="course-card" onclick="toggleCourseDetails('data-science')">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Data Science">
+                </div>
+                <div class="course-info">
+                    <h3>Data Science</h3>
+                    <p>Become a data science expert</p>
+                </div>
+                <div class="course-details" id="data-science-details">
+                    <p>Learn Python, Pandas, NumPy, Matplotlib, and machine learning algorithms for data analysis.</p>
+                    <p><strong>Duration:</strong> 16 weeks</p>
+                    <p><strong>Instructor:</strong> Prof. Michael Chen</p>
+                    <a href="sign-in.html">
+                        <button class="course-register-btn">Login</button>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Course 3 -->
+            <div class="course-card" onclick="toggleCourseDetails('cybersecurity')">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cybersecurity">
+                </div>
+                <div class="course-info">
+                    <h3>Cybersecurity</h3>
+                    <p>Protect systems from digital attacks</p>
+                </div>
+                <div class="course-details" id="cybersecurity-details">
+                    <p>Learn ethical hacking, network security, cryptography, and security best practices.</p>
+                    <p><strong>Duration:</strong> 14 weeks</p>
+                    <p><strong>Instructor:</strong> Dr. Alan Turing</p>
+                    <a href="sign-in.html">
+                        <button class="course-register-btn">Login</button>
+                    </a>
+                                </div>
+            </div>
+            
+            <!-- Course 4 -->
+            <div class="course-card" onclick="toggleCourseDetails('ai-ml')">
+                <div class="course-image">
+                    <img src="ai.jpeg" alt="AI & Machine Learning">
+                </div>
+                <div class="course-info">
+                    <h3>AI & Machine Learning</h3>
+                    <p>Master artificial intelligence</p>
+                </div>
+                <div class="course-details" id="ai-ml-details">
+                    <p>Learn neural networks, deep learning, TensorFlow, and practical AI applications.</p>
+                    <p><strong>Duration:</strong> 18 weeks</p>
+                    <p><strong>Instructor:</strong> Prof. Emily Zhang</p>
+                    <a href="sign-in.html">
+                        <button class="course-register-btn">Login</button>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Course 5 -->
+            <div class="course-card" onclick="toggleCourseDetails('cloud-computing')">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Cloud Computing">
+                </div>
+                <div class="course-info">
+                    <h3>Cloud Computing</h3>
+                    <p>Master AWS, Azure and GCP</p>
+                </div>
+                <div class="course-details" id="cloud-computing-details">
+                    <p>Learn cloud architecture, deployment, and management across major platforms.</p>
+                    <p><strong>Duration:</strong> 10 weeks</p>
+                    <p><strong>Instructor:</strong> Prof. David Wilson</p>
+                    <a href="sign-in.html">
+                        <button class="course-register-btn">Login</button>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Course 6 -->
+            <div class="course-card" onclick="toggleCourseDetails('mobile-dev')">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mobile Development">
+                </div>
+                <div class="course-info">
+                    <h3>Mobile Development</h3>
+                    <p>Build iOS and Android apps</p>
+                </div>
+                <div class="course-details" id="mobile-dev-details">
+                    <p>Learn Flutter, React Native, Swift, and Kotlin for cross-platform mobile development.</p>
+                    <p><strong>Duration:</strong> 14 weeks</p>
+                    <p><strong>Instructor:</strong> Prof. Lisa Brown</p>
+                    <a href="sign-in.html">
+                        <button class="course-register-btn">Login</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2023 UPBRIGHT E-Learning Platform. All rights reserved.</p>
+        <p class="slogan">Dream. Learn. Achieve</p>
+    </footer>
+    
+   <script src="/client/home/home.js"></script>
+</body>
+</html>
