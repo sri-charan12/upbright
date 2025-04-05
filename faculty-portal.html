@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Portal</title>
+    <link rel="stylesheet" href="/client/css/faculty-portal.css">
+</head>
+<body>
+    <div class="portal-container">
+        <div class="portal-header">
+            <h1>Faculty Dashboard</h1>
+            <div class="notification-bell">🔔</div>
+        </div>
+
+        <nav class="nav-tabs">
+            <button class="tab active-tab" data-tab="course-management">Course Management</button>
+            <button class="tab" data-tab="assignments">Assignments</button>
+            <button class="tab" data-tab="performance">Student Performance</button>
+            <button class="tab" data-tab="notifications">Notifications</button>
+        </nav>
+
+        <!-- Course Management Section -->
+        <div id="course-management" class="tab-content active-tab">
+            <h2>Course Management</h2>
+            <div class="course-actions">
+                <button id="new-course-btn" class="btn-primary">+ New Course</button>
+            </div>
+            <div class="course-list">
+                <!-- Dynamic content will be added here -->
+            </div>
+        </div>
+
+        <!-- Assignments Section -->
+        <div id="assignments" class="tab-content hidden">
+            <h2>Assignment Management</h2>
+            <form id="assignment-form">
+                <input type="text" placeholder="Assignment Title" required>
+                <textarea placeholder="Description"></textarea>
+                <input type="datetime-local" required>
+                <button type="submit" class="btn-primary">Create Assignment</button>
+            </form>
+        </div>
+
+        <!-- Student Performance Section -->
+        <div id="performance" class="tab-content hidden">
+            <h2>Student Performance</h2>
+            <div class="performance-grid">
+                <!-- Dynamic content will be added here -->
+            </div>
+        </div>
+
+        <!-- Notifications Section -->
+        <div id="notifications" class="tab-content hidden">
+            <h2>Notifications</h2>
+            <div class="notification-list">
+                <!-- Dynamic content will be added here -->
+            </div>
+            <button id="new-notification-btn" class="btn-secondary">+ New Announcement</button>
+        </div>
+    </div>
+
+    <script src="/client/js/faculty-portal.js"></script>
+</body>
+</html>
