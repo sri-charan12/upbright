@@ -48,3 +48,4 @@ Then we insert details into their table (`students`, `faculty`, etc.)
 ├── admin.js
 ├── config.js
 └── README.md
+so we have solved real time several issues and still working on this project and the main is to deploy in the cloud by using the AWS services
