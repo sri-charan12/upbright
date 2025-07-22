@@ -1,6 +1,5 @@
 import { supabase } from './supabaseClient.js';
 
-// Insert admin details after signup
 export async function insertAdmin(userId, name, email, role) {
   const { data, error } = await supabase
     .from('admin')
