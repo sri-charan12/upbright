@@ -8,7 +8,6 @@ export async function signUpUser(email, password) {
   });
   return { data, error };
 }
-
 // Sign in a user
 export async function signInUser(email, password) {
   const { data, error } = await supabase.auth.signInWithPassword({
@@ -23,3 +22,4 @@ export async function getCurrentUser() {
   const { data: { user } } = await supabase.auth.getUser();
   return user;
 }
+
