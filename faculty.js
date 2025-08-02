@@ -1,5 +1,4 @@
 import { supabase } from './supabaseClient.js';
-
 // Insert faculty details after signup
 export async function insertFaculty(userId, name, email, department, subject) {
   const { data, error } = await supabase
@@ -25,3 +24,4 @@ export async function getFacultyById(userId) {
     .single();
   return { data, error };
 }
+
